@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>formulário dinâmico com Vue JS</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://cdnjs.cloundflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mb-5 mt-5">
+                    <div class="card-header">
+                        Formulário
+                    </div>
+                    <div class="card-body">
+                        <span class="float-rignt" style="cursor:pointer">X</span>
+                        <h4 class="card-title">Informe seus dados abaixo:</h4>
+                        <input type="text" name="nome[]" class="form-control mb-2" placeholder="Nome">
+                            <input type="email" name="e-mail[]" class="form-control mb-2" placeholder="E-mail">
+                                <textarea name="obs[]" cols="30" rows="10" class="form-control" placeholder="Observações" v-model="fomulario.obs"></textarea>
+
+
+                    </div>
+
+                </div>
+                <button class="btn btn-success mb-5 mt-5">Enviar formulário</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var app = new vue({
+            el:".container",
+            data:{
+                formularios:[{nome:'',email:'',obs:'' }]
+            }
+        })
+    </script>
+
+</body>
+</html>
